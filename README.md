@@ -16,7 +16,7 @@ This portfolio contains hands-on projects that simulate a real corporate IT envi
 
 **Objective:** Build a corporate Windows environment from scratch.
 
-[📁 View Full Project Documentation](C:\Users\Adejo\iCloudDrive\IT PROJECT\# Project.md)
+[📁 View Full Project Documentation](https://docs.google.com/document/d/1uStkXWx25GhWItCnboR53mSuo08ItcCXuBkCDcaaaZI/edit?usp=sharing
 
 ### Environment
 
