@@ -1,5 +1,4 @@
-# IT-Infrastructure-Portfolio
-Enterprise IT lab: Active Directory, PowerShell automation, ServiceNow integration
+
 # IT Infrastructure Portfolio
 
 Enterprise IT lab environment demonstrating real-world infrastructure skills.
