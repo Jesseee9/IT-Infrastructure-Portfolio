@@ -76,11 +76,8 @@ COMPLETE: 10 users created, 0 skipped/failed
 
 10 users created in about 3 seconds. Doing this manually would take 20-30 minutes.
 
-[View the full script](./scripts/Create-ADUsers.ps1)
+![10 users created via powershell](https://github.com/user-attachments/assets/04836e27-5b10-43c3-acbf-fb349133cf96)
 
-![AD Users Created](./screenshots/ad-users-it.png)
-
-![User Properties](./screenshots/user-properties.png)
 
 ---
 
@@ -92,10 +89,13 @@ I created the same 10 users in Azure Entra ID to demonstrate hybrid identity man
 
 One thing I ran into: Azure rejected the password "Welcome2026!" because it blocks commonly used words. Had to use something stronger. Small detail, but it's the kind of thing you learn by actually doing it.
 
-![Entra ID Users](
+(![All users in Entra ID](https://github.com/user-attachments/assets/854716fc-6da6-4b6c-8140-f979f989f753)
 
 
-![Entra User Profile](./screenshots/entra-user-profile.png)
+
+
+(![Entra ID user Profile ](https://github.com/user-attachments/assets/82a9927b-3e92-43bf-b4dd-d4ce9be0f6ce)
+
 
 ---
 
