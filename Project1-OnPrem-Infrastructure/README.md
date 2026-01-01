@@ -191,8 +191,6 @@ Connecting a computer to the domain so it's managed by Active Directory.
 
 ---
 
-## ⏭️ Next Steps
-
 This foundation enables:
 - **Project 2:** PowerShell automation for bulk user creation and Azure Entra ID integration
 - **Project 3:** ServiceNow MID Server installation and ITSM automation
