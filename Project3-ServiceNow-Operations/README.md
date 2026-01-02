@@ -27,7 +27,7 @@ Connect a ServiceNow cloud instance to an on-premises Windows Server environment
 │ │
 └──────────────────────────────────────────────────────────────────┘
 
----
+---https://docs.google.com/document/d/1uStkXWx25GhWItCnboR53mSuo08ItcCXuBkCDcaaaZI/edit?usp=sharing
 
 ## ✅ What Was Built
 
