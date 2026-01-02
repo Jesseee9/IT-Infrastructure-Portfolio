@@ -12,7 +12,7 @@ This portfolio contains hands-on projects that simulate a real corporate IT envi
 |---------|-------|--------|
 | Project 1 | On-Prem Infrastructure (AD, DNS, DHCP) | ✅ Complete |
 | Project 2 | Identity & Automation (PowerShell, Azure Entra ID) | ✅ Complete |
-| Project 3 | ServiceNow Operations (MID Server, Flow Designer) | 🔜 Coming Soon |
+| Project 3 | ServiceNow Operations (MID Server, Flow Designer) | ✅ Complete |
 
 ---
 
@@ -20,7 +20,6 @@ This portfolio contains hands-on projects that simulate a real corporate IT envi
 
 **Objective:** Build a corporate Windows environment from scratch.
 
-[📁 View Full Project Documentation](https://docs.google.com/document/d/1uStkXWx25GhWItCnboR53mSuo08ItcCXuBkCDcaaaZI/edit?usp=sharing)
 
 ### Environment
 
@@ -60,7 +59,6 @@ This portfolio contains hands-on projects that simulate a real corporate IT envi
 
 **Objective:** Automate user onboarding in both on-premises AD and cloud environments.
 
-[📁 View Full Project Documentation](https://docs.google.com/document/d/1uStkXWx25GhWItCnboR53mSuo08ItcCXuBkCDcaaaZI/edit?usp=sharing
 
 ### What Was Built
 
@@ -71,4 +69,86 @@ This portfolio contains hands-on projects that simulate a real corporate IT envi
 | Azure Entra ID | Cloud identity management with matching user accounts |
 
 ### Automation Workflow
+CSV File (employee data)
+↓
+PowerShell Script
+↓
+┌────┴────┐
+↓ ↓
+AD Azure Entra ID
+(on-prem) (cloud)
+
+### Key Achievements
+
+- Designed logical OU structure mirroring real corporate departments
+- Built PowerShell script for bulk user provisioning from CSV
+- Created matching cloud identities in Azure Entra ID
+- Demonstrated hybrid identity management approach
+
+---
+
+## ☁️ Project 3: ServiceNow Operations
+
+**Objective:** Bridge cloud ITSM operations with on-premises infrastructure using ServiceNow MID Server.
+
+
+### Architecture
+
+┌─────────────────────────────────────────────────────────────┐
+│ │
+│ ServiceNow (Cloud) CORP-DC1 (On-Prem) │
+│ ┌─────────────────┐ ┌───────────────────┐ │
+│ │ PDI Instance │ │ Windows Server │ │
+│ │ │ Internet │ │ │
+│ │ Flow Designer │◄───────────►│ MID Server │ │
+│ │ Incidents │ │ PowerShell │ │
+│ └─────────────────┘ └───────────────────┘ │
+│ │
+└─────────────────────────────────────────────────────────────┘
+
+
+### What Was Built
+
+| Component | Description |
+|-----------|-------------|
+| MID Server | Secure bridge between ServiceNow cloud and on-prem infrastructure |
+| Service Account | Dedicated AD account (svc_mid) for MID Server authentication |
+| Flow Designer | Automation workflow triggered by incident creation |
+| PowerShell Script | Remediation script for service restart with logging |
+
+### MID Server Configuration
+
+| Setting | Value |
+|---------|-------|
+| MID Server Name | CORP-DC1-MID |
+| Status | Up |
+| Validated | Yes |
+| Host | CORP-DC1 (192.168.10.10) |
+| ServiceNow Instance | Personal Developer Instance (Zurich) |
+
+### Key Achievements
+
+- Configured dual-NIC setup on domain controller (Host-only + NAT) for hybrid connectivity
+- Installed and validated MID Server connecting cloud ITSM to on-prem environment
+- Created dedicated service accounts following security best practices
+- Built Flow Designer automation responding to incident triggers
+- Developed PowerShell remediation script with error handling and logging
+- Demonstrated enterprise pattern: Cloud ticketing → On-prem execution
+
+---
+
+## 🛠️ Technical Skills Demonstrated
+
+| Category | Skills |
+|----------|--------|
+| **Windows Server** | AD DS, DNS, DHCP, Group Policy, Service Accounts |
+| **Networking** | Static IP, DHCP scopes, Virtual networking, Dual-NIC configuration |
+| **Automation** | PowerShell scripting, Bulk operations, Error handling |
+| **Cloud Identity** | Azure Entra ID, User provisioning |
+| **ITSM** | ServiceNow administration, MID Server, Flow Designer |
+| **Virtualization** | VMware Workstation, Snapshots, Resource management |
+
+---
+
+
 
