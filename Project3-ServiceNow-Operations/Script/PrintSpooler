@@ -1,1 +1,58 @@
 
+# Restart-PrintSpooler.ps1
+
+# This script restarts the Print Spooler service and logs the action
+# Used for ServiceNow Flow Designer automation demo
+
+# Define log file location
+$LogFile = "C:\Scripts\Logs\ServiceNow-Automation.log"
+
+# Create Logs folder if it doesn't exist
+$LogFolder = Split-Path $LogFile -Parent
+if (-not (Test-Path $LogFolder)) {
+    New-Item -ItemType Directory -Path $LogFolder -Force | Out-Null
+}
+
+# Get current timestamp
+$Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+
+# Log start of operation
+Add-Content -Path $LogFile -Value "[$Timestamp] === Script Started ==="
+Add-Content -Path $LogFile -Value "[$Timestamp] Attempting to restart Print Spooler service..."
+
+try {
+    # Restart the Print Spooler service
+    Restart-Service -Name "Spooler" -Force -ErrorAction Stop
+    
+    # Wait a moment for service to fully start
+    Start-Sleep -Seconds 2
+    
+    # Check service status
+    $Service = Get-Service -Name "Spooler"
+    
+    # Log success
+    $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $LogFile -Value "[$Timestamp] SUCCESS: Print Spooler restarted. Status: $($Service.Status)"
+    Add-Content -Path $LogFile -Value "[$Timestamp] === Script Completed Successfully ==="
+    Add-Content -Path $LogFile -Value ""
+    
+    # Output for ServiceNow to capture
+    Write-Output "SUCCESS: Print Spooler service restarted successfully. Current status: $($Service.Status)"
+    
+    # Exit with success code
+    exit 0
+}
+catch {
+    # Log failure
+    $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $LogFile -Value "[$Timestamp] ERROR: Failed to restart Print Spooler"
+    Add-Content -Path $LogFile -Value "[$Timestamp] Error details: $($_.Exception.Message)"
+    Add-Content -Path $LogFile -Value "[$Timestamp] === Script Failed ==="
+    Add-Content -Path $LogFile -Value ""
+    
+    # Output for ServiceNow to capture
+    Write-Output "FAILED: Could not restart Print Spooler. Error: $($_.Exception.Message)"
+    
+    # Exit with error code
+    exit 1
+}
